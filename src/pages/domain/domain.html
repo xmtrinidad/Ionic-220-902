@@ -1,0 +1,30 @@
+
+<script src="domain.module.ts"></script>
+<ion-header>
+
+  <ion-navbar [color]="getColor()">
+    <ion-title>220-901</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div [ngStyle]="{'background-color': domain.color}" class="Domain">
+    <div class="Domain__icon">
+      <i [class]="domain.icon"></i>
+    </div>
+  </div>
+  <h2 [ngStyle]="{'color': domain.color}" class="Domain__title">{{domain.title}}</h2>
+  <ion-list text-wrap>
+    <button
+      ion-item *ngFor="let objective of section.objectives"
+      (click)="objectiveSelected(objective, domain.color)">
+      <span
+        class="Domain__section-number"
+        [ngStyle]="{'background-color': domain.color}"
+        item-end>{{objective.sectionNumber}}</span>
+      <span class="Domain__section-title" item-end>{{objective.title}}</span>
+    </button>
+  </ion-list>
+</ion-content>

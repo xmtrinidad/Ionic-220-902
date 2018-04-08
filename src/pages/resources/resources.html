@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar [color]="getColor()">
+    <ion-title>{{objective}} Resources</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onModalClose()" class="my-style-for-modal">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="!resources" padding>
+  <div class="no-resources" text-center>
+    <ion-icon name="archive"></ion-icon>
+    <p>No resources currently available</p>
+  </div>
+  <button (click)="viewCtrl.dismiss()" ion-button full>Back to Objective List</button>
+</ion-content>
+
+<ion-content *ngIf="resources" padding>
+  <ion-card *ngFor="let resource of resources">
+    <img [src]="resource.img"/>
+    <ion-card-header>
+      {{ resource.title }}
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ resource.description }}</p>
+    </ion-card-content>
+    <a [href]="resource.link" ion-button icon-left clear>
+      <ion-icon name="eye"></ion-icon>
+      <div>Watch</div>
+    </a>
+  </ion-card>
+  <button class="Resources__back-btn" (click)="viewCtrl.dismiss()" ion-button full>Back to Objective List</button>
+</ion-content>

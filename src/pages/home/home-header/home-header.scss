@@ -1,0 +1,22 @@
+page-home {
+  .Header {
+    text-align: center;
+    padding-bottom: 12px;
+  }
+
+  .Header__logo {
+    width: 130px;
+  }
+
+  .Header__exam-number {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+  }
+
+  @media (min-width: 768px) {
+    .Header {
+
+    }
+  }
+}
