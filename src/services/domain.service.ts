@@ -27,7 +27,6 @@ export class DomainService {
   }
 
   getBullets(objectiveNumber: number) {
-    console.log(objectiveNumber);
     return BULLETS.find(el => el.objectiveNumber === objectiveNumber);
   }
 

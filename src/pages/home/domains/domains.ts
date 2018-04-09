@@ -25,7 +25,6 @@ export class DomainsComponent implements OnInit {
     if (domainClicked.id === 5) {
       this.navCtrl.push(AcronymsPage, domainClicked);
     } else {
-      console.log(domainClicked);
       this.navCtrl.push(DomainPage, domainClicked);
     }
 

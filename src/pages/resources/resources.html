@@ -20,7 +20,7 @@
 <ion-content *ngIf="resources" padding>
   <ion-card *ngFor="let resource of resources">
     <img [src]="resource.img"/>
-    <ion-card-header>
+    <ion-card-header text-wrap>
       {{ resource.title }}
     </ion-card-header>
     <ion-card-content>
